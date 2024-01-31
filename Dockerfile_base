@@ -1,0 +1,11 @@
+FROM nvcr.io/nvidia/pytorch:22.04-py3
+
+# Install python packages
+RUN python3 -m pip --no-cache-dir install \
+        timm==0.6.12 \
+        wandb==0.13.7 \
+        submitit==1.4.5 && \
+# ==================================================================
+# clean up everything
+# ------------------------------------------------------------------
+    rm -rf /var/lib/apt/lists/* /tmp/*
